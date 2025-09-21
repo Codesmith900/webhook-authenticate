@@ -39,7 +39,7 @@ pip install Flask
 2. **Start the server:** Run the main application file.
 
 ```bash
-python main.py
+python new.py
 ```
 
 3. **Expose your local server:** Open a new terminal and use `ngrok` to create a public URL for your application.
@@ -50,7 +50,7 @@ ngrok http 5000
 
 ## GitHub Webhooks
 
-The provided `main.py` is pre-configured to handle GitHub webhooks. After running your application and `ngrok`, follow these steps to set up the webhook on GitHub.
+The provided `new.py` is pre-configured to handle GitHub webhooks. After running your application and `ngrok`, follow these steps to set up the webhook on GitHub.
 
 1. Copy the forwarding URL from the `ngrok` terminal output.
 2. In your GitHub repository, go to **Settings > Webhooks > Add webhook**.
@@ -68,9 +68,8 @@ Your Flask application should now be able to receive and authenticate requests f
 
 ```
 webhook-authenticator/
-├── webhook_auth.py      # Main authentication system
-├── main.py             # Flask application with webhook handlers
-├── requirements.txt    # Python dependencies
+├── authenticate.py      # Main authentication system
+├── new.py             # Flask application with webhook handlers
 └── README.md          # This file
 ```
 
@@ -108,7 +107,7 @@ Enable debug logging to troubleshoot authentication issues:
 
 ```python
 import logging
-logging.getLogger('webhook_auth').setLevel(logging.DEBUG)
+logging.getLogger('authenticate').setLevel(logging.DEBUG)
 ```
 
 ### Manual Testing
